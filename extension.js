@@ -25,10 +25,11 @@ function activate(context) {
             return;  // No open text editor
         }
 
-        editor.edit(builder => {
-            const document = editor.document
-            const lineCount = document.lineCount
+        const document = editor.document
+        const lineCount = document.lineCount
 
+        // solution 1 - editor.edit()
+        editor.edit(builder => {
             for (let i=0; i<lineCount; i++) {
                 const textLine = document.lineAt(i)
                 const oriTrimText = textLine.text.trimRight()
@@ -41,6 +42,23 @@ function activate(context) {
                 }
             }
         })
+
+        // solution 2 - vscode.workspace.applyEdit(vscode.WorkspaceEdit)
+        // let textEdits = []
+        // for (let i=0; i<lineCount; i++) {
+        //     const textLine = document.lineAt(i)
+        //     const oriTrimText = textLine.text.trimRight()
+
+        //     if (oriTrimText.length === 0) {
+        //         textEdits.push(new vscode.TextEdit(textLine.range, ''))
+        //     } else {
+        //         const panguText = pangu.spacing(oriTrimText)
+        //         textEdits.push(new vscode.TextEdit(textLine.range, panguText))
+        //     }
+        // }
+        // let workspaceEdit = new vscode.WorkspaceEdit()
+        // workspaceEdit.set(document.uri, textEdits)
+        // vscode.workspace.applyEdit(workspaceEdit)
     });
 
     context.subscriptions.push(disposable);
