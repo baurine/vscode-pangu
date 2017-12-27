@@ -20,14 +20,27 @@ function activate(context) {
         // Display a message box to the user
         // vscode.window.showInformationMessage('Hello World!');
 
-        const editor = vscode.window.activeTextEditor;
+        const editor = vscode.window.activeTextEditor
         if (!editor) {
-            return;  // No open text editor
+            return  // No open text editor
         }
 
         const document = editor.document
+        const selection = editor.selection
+        const selectedText = document.getText(selection)
+
+        // just spacing selected text if has
+        if (selectedText) {
+            const panguText = pangu.spacing(selectedText)
+            editor.edit(builder => {
+                builder.replace(selection, panguText)
+            })
+            return
+        }
+
         const lineCount = document.lineCount
 
+        // spacing all text
         // solution 1 - editor.edit()
         editor.edit(builder => {
             for (let i=0; i<lineCount; i++) {
