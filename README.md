@@ -15,6 +15,6 @@ Press `cmd + shift + p`, input `Why not add a space between Chinese and English`
 ## Todo
 
 - [x] Publish to VS Code extension marketplace
-- [ ] Support just add space for selection text
+- [x] Support just add whitespace for selected text
 - [ ] Write a note to record how to write a VS Code extension
 - [ ] Maybe support config a shortkey for it
