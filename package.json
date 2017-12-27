@@ -1,7 +1,7 @@
 {
     "name": "vscode-pangu",
     "displayName": "vscode-pangu",
-    "description": "Auto add a space between Chinese and English.",
+    "description": "Auto add space between Chinese and English.",
     "version": "0.0.1",
     "publisher": "baurine",
     "engines": {
