@@ -12,9 +12,15 @@ Search extension `vscode-pangu` in VS Code.
 
 Press `cmd + shift + p`, input `Why not add a space between Chinese and English`, press enter.
 
+If has selected text, it works on selected text, else works on whole text.
+
+## Note
+
+- [How to implement a VS Code extension to add whitespace between Chinese and English](https://github.com/baurine/vscode-pangu/blob/master/notes/vscode-extension-note.md)
+
 ## Todo
 
 - [x] Publish to VS Code extension marketplace
 - [x] Support just add whitespace for selected text
-- [ ] Write a note to record how to write a VS Code extension
+- [x] Write a note to record how to write a VS Code extension
 - [ ] Maybe support config a shortkey for it

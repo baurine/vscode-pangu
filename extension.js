@@ -49,6 +49,8 @@ function activate(context) {
 
                 if (oriTrimText.length === 0) {
                     builder.replace(textLine.range, '')
+                    // or
+                    // builder.delete(textLine.range)
                 } else {
                     const panguText = pangu.spacing(oriTrimText)
                     builder.replace(textLine.range, panguText)
@@ -64,6 +66,8 @@ function activate(context) {
 
         //     if (oriTrimText.length === 0) {
         //         textEdits.push(new vscode.TextEdit(textLine.range, ''))
+        //         // or
+        //         // textEdits.push(vscode.TextEdit.delete(textLine.range))
         //     } else {
         //         const panguText = pangu.spacing(oriTrimText)
         //         textEdits.push(new vscode.TextEdit(textLine.range, panguText))
